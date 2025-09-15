@@ -43,7 +43,7 @@ const products = [
 ];
 
 export default function ProductPage({ params }: ProductPageProps) {
-  const product = products.find((p) => p.id === params.id);
+  const product = products.find((product) => product.id === params.id);
 
   if (!product) {
     return <h1 className="p-6 text-red-500">Product not found</h1>;

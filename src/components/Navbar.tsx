@@ -28,8 +28,16 @@ export default function Navbar() {
           <Link href="/contact" className="hover:text-gray-400">
             Contact
           </Link>
-          <Link href="/shop">Shop</Link>
-          <Link href="/lookbook">Lookbook</Link>
+          <Link href="/shop" className="hover:text-gray-400">
+            Shop
+          </Link>
+          <Link href="/lookbook" className="hover:text-gray-400">
+            Lookbook
+          </Link>
+          </Link>
+          <Link href="/lookbook" className="hover:text-gray-400">
+            Lookbook
+          </Link>
         </div>
 
         {/* Hamburger Icon (Mobile) */}
