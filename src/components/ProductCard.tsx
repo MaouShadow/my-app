@@ -25,7 +25,10 @@ export default function ProductCard({
       />
       <h2 className="text-lg font-semibold mt-2">{name}</h2>
       <p className="text-gray-600">{price}</p>
-      <Link href={`/products/${id}`} className="text-blue-600 hover:underline">
+      <Link
+        href={`/products/${id}`}
+        className="mt-4 inline-block bg-white text-blue-600 px-6 py-3 hover:underline"
+      >
         View Details
       </Link>
     </div>
