@@ -34,10 +34,6 @@ export default function Navbar() {
           <Link href="/lookbook" className="hover:text-gray-400">
             Lookbook
           </Link>
-          </Link>
-          <Link href="/lookbook" className="hover:text-gray-400">
-            Lookbook
-          </Link>
         </div>
 
         {/* Hamburger Icon (Mobile) */}
