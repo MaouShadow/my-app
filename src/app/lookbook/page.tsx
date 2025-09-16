@@ -1,9 +1,16 @@
 import Image from "next/image";
+import { title } from "process";
 
 const lookbookItems = [
   { id: "1", title: "Streetwear Vibes", image: "/products/look1.jpg" },
   { id: "2", title: "Luxury Classics", image: "/products/look2.jpg" },
   { id: "3", title: "Evening Elegance", image: "/products/look3.jpg" },
+  { id: "4", title: "Casual Comfort", image: "/products/look4.jpg" },
+  { id: "5", title: "Winter Warmth", image: "/products/look5.jpg" },
+  { id: "6", title: "Summer Fresh", image: "/products/look6.jpg" },
+  { id: "7", title: "Kids & Babies", image: "/products/look7.jpg" },
+  { id: "8", title: "Wedding & Bridal collections", image: "/products/look8.jpg" },
+  { id: "9", title: "swimsuits & beachwear", image: "/products/look9.jpg" },
 ];
 
 export default function Lookbook() {
