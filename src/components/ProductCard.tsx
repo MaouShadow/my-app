@@ -27,7 +27,7 @@ export default function ProductCard({
       <p className="text-gray-600">{price}</p>
       <Link
         href={`/products/${id}`}
-        className="mt-4 inline-block bg-white text-black-600 px-6 py-3 rounded-lg hover:underline"
+        className="mt-4 inline-block bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 transition"
       >
         View Details
       </Link>
