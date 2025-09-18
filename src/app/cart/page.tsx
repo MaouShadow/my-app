@@ -1,10 +1,37 @@
 "use client";
 import { useCart } from "../../context/CartContext";
+import { toast } from "react-toastify";
 
 export default function CartPage() {
   const { cart, removeFromCart, clearCart } = useCart();
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const handleRemove = (id: string, name: string) => {
+    removeFromCart(id);
+    toast.info(`${name} removed from cart ❌`, {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
+  };
+
+  const handleClear = () => {
+    clearCart();
+    toast.warn("Cart cleared 🗑️", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      theme: "colored",
+    });
+  };
 
   return (
     <section className="p-6 max-w-4xl mx-auto">
@@ -30,7 +57,7 @@ export default function CartPage() {
               </div>
 
               <button
-                onClick={() => removeFromCart(item.id)}
+                onClick={() => handleRemove(item.id, item.name)}
                 className="text-red-500 hover:underline"
               >
                 Remove
@@ -45,7 +72,7 @@ export default function CartPage() {
 
           <div className="flex gap-4 mt-6">
             <button
-              onClick={clearCart}
+              onClick={handleClear}
               className="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700"
             >
               Clear Cart
