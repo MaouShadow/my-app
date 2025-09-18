@@ -76,3 +76,4 @@ export const useCart = () => {
 
 
 // new cart
+// locl storage
