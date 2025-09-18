@@ -1,5 +1,7 @@
 import Image from "next/image";
 
+
+
 const lookbookItems = [
   { id: "1", title: "Streetwear Vibes", image: "/products/look1.jpg" },
   { id: "2", title: "Luxury Classics", image: "/products/look2.jpg" },
