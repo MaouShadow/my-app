@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { title } from "process";
+// import { title } from "process";
 
 const lookbookItems = [
   { id: "1", title: "Streetwear Vibes", image: "/products/look1.jpg" },
