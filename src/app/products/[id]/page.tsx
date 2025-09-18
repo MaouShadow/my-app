@@ -1,10 +1,11 @@
 "use client";
-import { use } from "react"; // 👈 new
 import Image from "next/image";
+import { use } from "react";
 import { useCart } from "../../../context/CartContext";
+import { toast } from "react-toastify";
 
 type ProductPageProps = {
-  params: Promise<{ id: string }>; // 👈 params is now a Promise
+  params: Promise<{ id: string }>;
 };
 
 const products = [
@@ -47,8 +48,6 @@ const products = [
 
 export default function ProductPage({ params }: ProductPageProps) {
   const { addToCart } = useCart();
-
-  // ✅ unwrap params with React.use()
   const { id } = use(params);
 
   const product = products.find((p) => p.id === id);
@@ -56,6 +55,16 @@ export default function ProductPage({ params }: ProductPageProps) {
   if (!product) {
     return <h1 className="p-6 text-red-500">Product not found</h1>;
   }
+
+  const handleAddToCart = () => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+    });
+    toast.success(`${product.name} added to cart! ✅`);
+  };
 
   return (
     <section className="p-6 max-w-3xl mx-auto">
@@ -71,14 +80,7 @@ export default function ProductPage({ params }: ProductPageProps) {
       <p className="mt-4 text-gray-600">{product.description}</p>
 
       <button
-        onClick={() =>
-          addToCart({
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            quantity: 1,
-          })
-        }
+        onClick={handleAddToCart}
         className="mt-6 bg-black text-white px-6 py-3 rounded hover:bg-gray-800"
       >
         Add to Cart
