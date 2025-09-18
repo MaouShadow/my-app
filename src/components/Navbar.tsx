@@ -34,7 +34,7 @@ export default function Navbar() {
           <Link href="/lookbook" className="hover:text-gray-400">
             Lookbook
           </Link>
-          <Link href="/Cart" className="hover:text-gray-400">
+          <Link href="/src/app/cart/page.tsx" className="hover:text-gray-400">
             Cart
           </Link>
         </div>
