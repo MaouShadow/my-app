@@ -73,3 +73,6 @@ export const useCart = () => {
   if (!context) throw new Error("useCart must be used inside CartProvider");
   return context;
 };
+
+
+// new cart
