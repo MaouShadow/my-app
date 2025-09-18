@@ -1,16 +1,17 @@
 "use client";
+import { use } from "react"; // 👈 new
 import Image from "next/image";
-import { useCart } from "../../../context/CartContext"; // adjust path if needed
+import { useCart } from "../../../context/CartContext";
 
 type ProductPageProps = {
-  params: { id: string };
+  params: Promise<{ id: string }>; // 👈 params is now a Promise
 };
 
 const products = [
   {
     id: "1",
     name: "Classic White Shirt",
-    price: 49, // 💡 use numbers instead of "$49"
+    price: 49,
     description: "A timeless cotton shirt.",
     image: "/products/shirt1.jpg",
   },
@@ -45,8 +46,12 @@ const products = [
 ];
 
 export default function ProductPage({ params }: ProductPageProps) {
-  const { addToCart } = useCart(); // 🛒 from context
-  const product = products.find((product) => product.id === params.id);
+  const { addToCart } = useCart();
+
+  // ✅ unwrap params with React.use()
+  const { id } = use(params);
+
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
     return <h1 className="p-6 text-red-500">Product not found</h1>;
