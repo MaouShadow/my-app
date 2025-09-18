@@ -1,5 +1,4 @@
 import Image from "next/image";
-// import { title } from "process";
 
 const lookbookItems = [
   { id: "1", title: "Streetwear Vibes", image: "/products/look1.jpg" },
@@ -9,7 +8,11 @@ const lookbookItems = [
   { id: "5", title: "Winter Warmth", image: "/products/look5.jpg" },
   { id: "6", title: "Summer Fresh", image: "/products/look6.jpg" },
   { id: "7", title: "Kids & Babies", image: "/products/look7.jpg" },
-  { id: "8", title: "Wedding & Bridal collections", image: "/products/look8.jpg" },
+  {
+    id: "8",
+    title: "Wedding & Bridal collections",
+    image: "/products/look8.jpg",
+  },
   { id: "9", title: "swimsuits & beachwear", image: "/products/look9.jpg" },
 ];
 
